@@ -31,7 +31,7 @@ export default function MyTab() {
                     tabBarLabelStyle: { fontSize: 14 },
                     tabBarIcon: ({ focused }) => (
                         <View style={{ borderTopWidth: focused ? 3 : 0, paddingTop: 16, borderTopColor: focused ? "#FC6703" : "" }}>
-                            <Image  source={home} style={styles.imageStyle} />
+                            <Image source={home} style={styles.imageStyle} />
 
                         </View>
                     ),
@@ -76,6 +76,6 @@ export default function MyTab() {
 }
 
 const styles = StyleSheet.create({
-    imageStyle: { marginBottom: 20,color:'black' }
+    imageStyle: { marginBottom: 20, color: 'black' }
 
 })

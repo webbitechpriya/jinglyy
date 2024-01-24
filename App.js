@@ -59,7 +59,7 @@ const App = () => {
         close: TransitionSpecs.TransitionIOSSpec,
         headerShown: false
       }}
-        initialRouteName="Profile"
+        initialRouteName="Home"
       >
         <Stack.Screen
           name="SignIn"
