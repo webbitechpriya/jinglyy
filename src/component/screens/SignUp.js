@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         marginLeft: 10,
         width: '80%',
+        color:"#A8AFB9"
+
     },
     textInputView: { flexDirection: 'row', elevation: 5, borderColor: '#090F4773', borderWidth: 0.2, width: "95%", alignSelf: "center", alignItems: "center", backgroundColor: "white", height: 55, borderRadius: 30 },
     signInView: { padding: 15, flex: 0.31, justifyContent: 'space-between', },

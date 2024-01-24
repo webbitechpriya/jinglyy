@@ -38,6 +38,7 @@ import Brands from './src/component/screens/Brands';
 import BrandView from './src/component/screens/BrandView';
 import MyTab from './src/component/screens/MyTab';
 import Description from './src/component/screens/Description';
+import Profile from './src/component/screens/Profile';
 
 const Stack = createStackNavigator();
 
@@ -58,7 +59,7 @@ const App = () => {
         close: TransitionSpecs.TransitionIOSSpec,
         headerShown: false
       }}
-        initialRouteName="Home"
+        initialRouteName="Profile"
       >
         <Stack.Screen
           name="SignIn"
@@ -79,6 +80,8 @@ const App = () => {
         <Stack.Screen name="Brands" component={Brands} />
         <Stack.Screen name="BrandView" component={BrandView} />
         <Stack.Screen name="Description" component={Description} />
+        <Stack.Screen name="Profile" component={Profile} />
+
 
       </Stack.Navigator>
     </NavigationContainer >

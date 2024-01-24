@@ -29,26 +29,26 @@ export default class WishList extends Component {
             images: [
                 {
                     id: 1,
-                    url: car2
+                    url: this.props.route.params.image
 
                 },
                 {
                     id: 2,
-                    url: car2
+                    url: this.props.route.params.image
 
                 },
                 {
                     id: 3,
-                    url: car2
+                    url: this.props.route.params.image
                 },
                 {
                     id: 4,
-                    url: car2
+                    url: this.props.route.params.image
 
                 },
                 {
                     id: 5,
-                    url: car2
+                    url: this.props.route.params.image
                 },
 
             ]
@@ -56,7 +56,6 @@ export default class WishList extends Component {
 
     }
     render() {
-
         const windowWidth = Dimensions.get('window').width;
         return (
             <SafeAreaView style={{ flex: 1 }}>
@@ -71,7 +70,7 @@ export default class WishList extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.container}>
-                        <Image source={car2} style={[styles.banner, { width: windowWidth - 30 }]} />
+                        <Image source={this.props.route.params.image} style={[styles.banner, { width: windowWidth - 30 }]} />
                     </View>
 
                     <View style={styles.thumbnail}>
@@ -80,7 +79,7 @@ export default class WishList extends Component {
                             // numColumns={2}
                             horizontal
                             showsHorizontalScrollIndicator={false}
-                            renderItem={({ item, index }) => <TouchableOpacity onPress={()=>this.setState({isOpen:true})} style={{ paddingLeft: 7 }}>
+                            renderItem={({ item, index }) => <TouchableOpacity onPress={() => this.setState({ isOpen: true })} style={{ paddingLeft: 7 }}>
                                 <View >
                                     <Image source={item.url} style={styles.flat} />
                                 </View>

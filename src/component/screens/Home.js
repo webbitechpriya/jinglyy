@@ -159,9 +159,9 @@ export default class Home extends Component {
             <SafeAreaView>
                 <ScrollView>
                     <View style={styles.header}>
-                        <View style={styles.flex2}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')} style={styles.flex2}>
                             <Image source={{ uri: 'https://source.unsplash.com/1024x768/?girl' }} style={styles.imageStyle} />
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.flex6}>
                             <Text style={styles.intro}>Good Morning</Text>
                             <Text style={styles.name}>Andrew Ainsely</Text>
@@ -211,7 +211,7 @@ export default class Home extends Component {
                                 // numColumns={5}
                                 contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: "space-between" }}
                                 showsHorizontalScrollIndicator={false}
-                                renderItem={({ item }) => <TouchableOpacity style={{ margin: 4 }}>
+                                renderItem={({ item }) => <TouchableOpacity style={{ margin: 4 }} onPress={() => this.props.navigation.navigate('Brands', { name: item.name })}>
                                     <View style={{ width: 70 }}>
                                         <View style={styles.carModel}>
                                             <Image source={item.image} style={styles.carImage} />
@@ -227,7 +227,7 @@ export default class Home extends Component {
                             />
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 }}>
                                 <Text style={styles.name}>Top Deals</Text>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Description')}>
+                                <TouchableOpacity >
                                     <Text style={styles.seeall}>See all</Text>
                                 </TouchableOpacity>
                             </View>
@@ -256,7 +256,7 @@ export default class Home extends Component {
                                 data={this.state.allData}
                                 numColumns={2}
                                 showsHorizontalScrollIndicator={false}
-                                renderItem={({ item, index }) => <TouchableOpacity style={{ padding: 7 }}>
+                                renderItem={({ item, index }) => <TouchableOpacity style={{ padding: 7 }} onPress={() => this.props.navigation.navigate('Description', { image: item.image })}>
                                     <View >
                                         <Image source={item.image} style={[styles.allImages, { width: windowWidth / 2 - 30 }]} />
                                         <TouchableOpacity onPress={() => this.setState({ icon: index })} style={styles.likeView}>
@@ -287,7 +287,7 @@ export default class Home extends Component {
     }
 }
 const styles = StyleSheet.create({
-    header: { padding: 15, flexDirection: "row", alignItems: "center",marginTop:8 },
+    header: { padding: 15, flexDirection: "row", alignItems: "center", marginTop: 8 },
     rating: { fontSize: 13, color: '#2C2C2CCC', marginLeft: 7 },
     divider: { height: 13, borderWidth: 0.5, borderColor: "#2C2C2CCC", marginLeft: 7 },
     name: { color: '#212121', lineHeight: 24 },
